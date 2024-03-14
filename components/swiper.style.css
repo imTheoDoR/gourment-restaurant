@@ -1,0 +1,17 @@
+.swiper-pagination {
+  @apply flex justify-center items-center relative mt-5;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #fff !important;
+  border: 4px solid #e63946;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #e63946;
+  opacity: 1;
+}

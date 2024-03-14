@@ -14,12 +14,16 @@ const config = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1500px",
       },
     },
     extend: {
+      fontFamily: {
+        colus: ["'Colus Regular'"],
+      },
       backgroundImage: {
         hero: "url('/images/hero_bg.png')",
+        sale: "url('/images/sale.png')",
       },
       keyframes: {
         "accordion-down": {
@@ -36,10 +40,18 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       colors: {
+        white2: "#F8F2E6",
         gray: "#6D6875",
         gray2: "#858585",
+        gray3: "#444247",
         orange: "#F0B366",
         orange2: "#F4A261",
+        red: "#E63946",
+        "light-yellow": "#F8F2E6",
+        green: "#2A9D8F",
+        brown: "#32110A",
+        blue: "#457B9D",
+        black: "#302E32",
       },
     },
   },

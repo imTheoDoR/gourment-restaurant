@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const font = Roboto({
   subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={font.className}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -5,6 +5,14 @@
 @layer {
   html,
   body {
-    @apply h-full text-white bg-white;
+    @apply h-full text-black bg-white;
   }
+}
+
+@font-face {
+  font-family: "Colus Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Colus Regular"),
+    url("/fonts/colus/ColusRegular.woff") format("woff");
 }

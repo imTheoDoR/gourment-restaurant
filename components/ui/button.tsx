@@ -9,25 +9,18 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          "bg-neutral-900 text-neutral-50 shadow hover:bg-neutral-900/90 dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-50/90",
-        destructive:
-          "bg-red-500 text-neutral-50 shadow-sm hover:bg-red-500/90 dark:bg-red-900 dark:text-neutral-50 dark:hover:bg-red-900/90",
-        outline:
-          "border border-neutral-200 bg-white shadow-sm hover:bg-neutral-100 hover:text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-800 dark:hover:text-neutral-50",
-        secondary:
-          "bg-neutral-100 text-neutral-900 shadow-sm hover:bg-neutral-100/80 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-800/80",
-        ghost:
-          "hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50",
+        default: "rounded-full",
         link: "text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50",
         btnHead:
           "rounded-full bg-gray/30 border border-orange2 text-orange font-bold hover:bg-gray/50",
+        reserve: "bg-red hover:bg-red/85 rounded-full font-light",
       },
       size: {
-        default: "h-9 px-4 py-2",
+        default: "h-9 px-10 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
-        lg: "h-10 rounded-md px-8",
+        lg: "h-12 px-10",
         book: "h-12 px-8 py-5 text-lg",
+        reserve: "px-10 py-4 text-xl",
         icon: "h-9 w-9",
       },
     },
