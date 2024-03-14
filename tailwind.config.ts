@@ -24,6 +24,7 @@ const config = {
       backgroundImage: {
         hero: "url('/images/hero_bg.png')",
         sale: "url('/images/sale.png')",
+        meet: "url('/images/meet-bg.png')",
       },
       keyframes: {
         "accordion-down": {
@@ -46,12 +47,14 @@ const config = {
         gray3: "#444247",
         orange: "#F0B366",
         orange2: "#F4A261",
+        orange3: "#FF8E00",
         red: "#E63946",
         "light-yellow": "#F8F2E6",
         green: "#2A9D8F",
         brown: "#32110A",
         blue: "#457B9D",
         black: "#302E32",
+        sand: "#DDCAC0",
       },
     },
   },
