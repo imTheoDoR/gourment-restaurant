@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Discover = () => {
   return (
-    <div className="bg-light-yellow relative">
+    <div className="bg-white2 relative">
       <div className="container pt-40 pb-64">
         <div className="flex justify-around">
           <div className="max-w-[600px]">

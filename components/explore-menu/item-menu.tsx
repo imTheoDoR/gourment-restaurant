@@ -2,13 +2,6 @@
 
 import Image from "next/image";
 
-interface ItemMenuProps {
-  image: string;
-  title: string;
-  description: string;
-  price: number;
-}
-
 const ItemMenu = ({ image, title, description, price }: ItemMenuProps) => {
   return (
     <div className="bg-white rounded-b-[18px] rounded-tr-[18px] p-5 shadow-md shadow-black/30 border-t-8 border-sand hover:bg-sand duration-300">
