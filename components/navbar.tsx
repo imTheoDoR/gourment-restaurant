@@ -30,11 +30,11 @@ const Navbar = () => {
       </div>
       <nav className="container flex items-center justify-between mt-5">
         <Image
-          src="/images/logo.png"
+          src="/images/logo.svg"
           alt="Gourmet Restaurant Logo"
           width={174}
           height={90}
-          className="w-auto"
+          className="w-40"
         />
         <ul className="hidden lg:flex items-center space-x-16">
           {navLinks.map((link, index) => (

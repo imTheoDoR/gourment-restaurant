@@ -7,7 +7,7 @@ import Evidence from "@/components/unforgettable/evidence";
 
 const UnforgettableWrapp = () => {
   return (
-    <div className="bg-white2 pb-16">
+    <section className="bg-white2 pb-16">
       <div className="bg-gray rounded-br-[400px] ">
         <div className="container flex items-center flex-row gap-10 w-full pt-10 space-x-20 relative">
           <div className="space-y-8 px-10">
@@ -16,7 +16,7 @@ const UnforgettableWrapp = () => {
               alt="gourment restaurant unforgettable plate 1"
               width={509}
               height={262}
-              className="w-auto"
+              className="w-auto lg:w-full"
             />
 
             <Image
@@ -24,7 +24,7 @@ const UnforgettableWrapp = () => {
               alt="gourment restaurant unforgettable plate 1"
               width={509}
               height={262}
-              className="w-auto"
+              className="w-auto lg:w-full"
             />
 
             <Image
@@ -32,7 +32,7 @@ const UnforgettableWrapp = () => {
               alt="gourment restaurant unforgettable plate 1"
               width={501}
               height={168}
-              className="w-auto"
+              className="w-auto lg:w-full"
             />
           </div>
           <div>
@@ -80,7 +80,7 @@ const UnforgettableWrapp = () => {
         <Evidence label="30" description="tables in total" />
         <Evidence label="10" description="yers of experience" />
       </div>
-    </div>
+    </section>
   );
 };
 

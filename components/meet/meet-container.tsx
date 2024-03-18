@@ -3,11 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaPlus } from "react-icons/fa6";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
+import Delimiter from "@/components/delimiter";
 
 const MeetWithChef = () => {
   return (
-    <div className="bg-meet bg-cover w-full h-auto overflow-y-hidden">
+    <section className="bg-meet bg-cover w-full h-auto overflow-y-hidden">
       <div className="container flex justify-center">
         <div className="flex items-center justify-stretch pt-20 gap-0 lg:gap-20">
           <Image
@@ -25,10 +26,7 @@ const MeetWithChef = () => {
               <h4 className="font-colus text-3xl text-center">
                 Meet with Chef&apos;s
               </h4>
-              <div className="bg-[#AE9E8A]/60 h-px w-48 mt-3 mx-auto relative">
-                <div className="w-[6px] h-[6px] bg-[#AE9E8A]/60 rotate-45 absolute top-1/2 bottom-1/2 transform -translate-y-1/2 -left-1"></div>
-                <div className="w-[6px] h-[6px] bg-[#AE9E8A]/60 rotate-45 absolute top-1/2 bottom-1/2 transform -translate-y-1/2 -right-1"></div>
-              </div>
+              <Delimiter />
               <p className="pt-5 text-center">
                 Embark on a culinary journey behind the scenes with our talented
                 team of chefs at Gourmet Restaurant.
@@ -82,7 +80,7 @@ const MeetWithChef = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

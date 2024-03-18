@@ -6,7 +6,7 @@ import { LuCalendarClock } from "react-icons/lu";
 
 const Header = () => {
   return (
-    <div className="h-screen w-full bg-hero bg-cover bg-center bg-no-repeat relative">
+    <div className="h-screen w-full bg-hero bg-cover bg-center bg-no-repeat relative overflow-x-hidden">
       <div className="absolute left-0 right-0">
         <Navbar />
       </div>

@@ -6,7 +6,7 @@ import WhyItem from "./why-item";
 
 const WhyUs = () => {
   return (
-    <div className="container py-32">
+    <section className="container py-32">
       <div className="text-center">
         <Title text="why choose us" isDark />
         <p className="text-gray max-w-4xl mx-auto pt-5">
@@ -26,7 +26,7 @@ const WhyUs = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -10,7 +10,7 @@ import Image from "next/image";
 
 const ExploreMenu = () => {
   return (
-    <div className="bg-gray text-white w-full relative overflow-y-hidden">
+    <section className="bg-gray text-white w-full relative overflow-y-hidden">
       <div className="container py-28">
         <div className="text-center">
           <Title text="Explore our menu" />
@@ -57,7 +57,7 @@ const ExploreMenu = () => {
         height={441}
         className="w-auto absolute left-0 bottom-[-18%]"
       />
-    </div>
+    </section>
   );
 };
 

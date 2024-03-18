@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Discover = () => {
   return (
-    <div className="bg-white2 relative">
+    <section className="bg-white2 relative">
       <div className="container pt-40 pb-64">
         <div className="flex justify-around">
           <div className="max-w-[600px]">
@@ -86,7 +86,7 @@ const Discover = () => {
         height={598}
         className="absolute bottom-[-20%] left-1/2 right-1/2 transform -translate-x-1/2 w-1/4"
       />
-    </div>
+    </section>
   );
 };
 

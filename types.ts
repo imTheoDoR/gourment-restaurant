@@ -15,3 +15,15 @@ type EvidenceProps = {
   label: string;
   description: string;
 };
+
+type TestimonialReviewProps = {
+  image: string;
+  title: string;
+  rating: number;
+  description: string;
+  order: number;
+};
+
+type DelimiterProps = {
+  isLight?: boolean;
+};

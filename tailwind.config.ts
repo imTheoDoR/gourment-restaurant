@@ -25,6 +25,7 @@ const config = {
         hero: "url('/images/hero_bg.png')",
         sale: "url('/images/sale.png')",
         meet: "url('/images/meet-bg.png')",
+        reserve: "url('/images/reservation-bg.png')",
       },
       keyframes: {
         "accordion-down": {
