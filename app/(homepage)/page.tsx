@@ -14,7 +14,7 @@ export default function Home() {
       <section className="container pt-40 pb-32">
         <BestDeal />
       </section>
-      {/* <ExploreMenu /> */}
+      <ExploreMenu />
       {/* <MeetWithChef /> */}
       {/* <WhyUs /> */}
       {/* <UnforgettableWrapp /> */}

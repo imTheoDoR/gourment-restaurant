@@ -27,6 +27,7 @@ const config = {
         meet: "url('/images/meet-bg.png')",
         reserve: "url('/images/reservation-bg.png')",
         discover: "url('/images/discover.png')",
+        menu: "url('/images/plate2.png')",
       },
       keyframes: {
         "accordion-down": {
