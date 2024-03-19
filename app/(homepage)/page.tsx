@@ -10,16 +10,17 @@ import WhyUs from "@/components/why/why-us";
 export default function Home() {
   return (
     <main>
-      {/* <Discover />
-      <section className="container pt-40 pb-32">
+      <Discover />
+      {/* <section className="container pt-40 pb-32">
         <BestDeal />
-      </section>
-      <ExploreMenu />
-      <MeetWithChef />
-      <WhyUs />
-      <UnforgettableWrapp />
-      <TestimonialWrapper />
-      <ReservationWrapper /> */}
+      </section> */}
+      {/* <ExploreMenu /> */}
+      {/* <MeetWithChef /> */}
+      {/* <WhyUs /> */}
+      {/* <UnforgettableWrapp /> */}
+      {/* <TestimonialWrapper /> */}
+      {/* <ReservationWrapper /> */}
+      <div className="pt-48"></div>
     </main>
   );
 }

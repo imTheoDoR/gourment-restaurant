@@ -12,7 +12,7 @@ const Header = () => {
       </div>
       <div className="w-full h-full text-center flex flex-col justify-center items-center">
         <h1 className="font-colus text-white2 tracking-wide uppercase text-5xl lg:text-7xl drop-shadow-lg">
-          Welcome to gourment,
+          Welcome to gourment
         </h1>
         <p className="max-w-max lg:max-w-2xl text-2xl lg:text-4xl mx-auto px-5 lg:px-0 pt-16 lg:pt-24 font-bold drop-shadow-lg text-white2">
           Book your table now and let us take you on a culinary adventure like
