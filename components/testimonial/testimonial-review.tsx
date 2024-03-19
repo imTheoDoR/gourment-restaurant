@@ -32,7 +32,7 @@ const TestimonialReview = ({
         />
         <h4 className="pt-20 font-colus text-xl">{title}</h4>
         <div className="flex flex-row justify-center">
-          {[...Array(fiveStar)].map((index) => (
+          {[...Array(fiveStar)].map((_, index) => (
             <BiSolidStar
               className="text-yellow w-4 h-4"
               key={`full-${index}`}
