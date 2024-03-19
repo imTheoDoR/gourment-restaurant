@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={font.className}>
         <Header />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

@@ -9,8 +9,8 @@ import { footerList1, footerList2, socials } from "@/data/footer";
 const Footer = () => {
   return (
     <footer className="bg-gray">
-      <div className="container flex flex-row justify-center gap-20 py-20">
-        <div className="max-w-xs">
+      <div className="container flex flex-col lg:flex-row justify-center gap-20 py-20">
+        <div className="max-w-max lg:max-w-xs">
           <Image
             src="/images/logo.svg"
             alt="gourments restaurant logo footer"
@@ -26,9 +26,9 @@ const Footer = () => {
           <Delimiter isLight />
         </div>
 
-        <div className="max-w-5xl flex justify-between items-end w-full pt-0 lg:pt-10">
+        <div className="max-w-max lg:max-w-5xl flex flex-col lg:flex-row gap-y-16 lg:gap-y-0 justify-center lg:justify-between items-center lg:items-end w-full pt-0 lg:pt-10 mx-auto text-center lg:text-start">
           {/* col 1 - book a table */}
-          <div className="bg-[#5D5965] flex flex-col max-w-[320px] w-full px-10 justify-center text-center rounded-tr-[45px] border-b-4 border-[#FAE9B7] py-10 place-self-end">
+          <div className="bg-[#5D5965] hidden xl:flex flex-col max-w-[320px] w-full px-10 justify-center text-center rounded-tr-[45px] border-b-4 border-[#FAE9B7] py-10 place-self-end">
             <span className="font-colus text-2xl text-white">1800.123.321</span>
             <span className="text-white font-colus text-lg">
               <span className="text-sm">Everyday:</span> 10 AM to 11 PM
@@ -86,7 +86,7 @@ const Footer = () => {
 
       {/* copyright */}
       <div className="bg-yellow">
-        <div className="container py-5 flex flex-col lg:flex-row justify-between items-center">
+        <div className="container py-5 flex flex-col lg:flex-row justify-start lg:justify-between items-start lg:items-center space-y-5 lg:space-y-0">
           <span className="text-gray">
             Capyright &copy;{" "}
             <Link className="text-brown" href="/">

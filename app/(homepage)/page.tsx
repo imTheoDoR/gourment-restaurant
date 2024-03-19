@@ -19,8 +19,7 @@ export default function Home() {
       <WhyUs />
       <UnforgettableWrapp />
       <TestimonialWrapper />
-      {/* <ReservationWrapper /> */}
-      <div className="pt-48"></div>
+      <ReservationWrapper />
     </main>
   );
 }

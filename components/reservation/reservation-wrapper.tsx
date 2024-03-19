@@ -7,8 +7,8 @@ import ReservationForm from "@/components/reservation/reservation-form";
 const ReservationWrapper = () => {
   return (
     <section className="bg-reserve bg-cover w-full">
-      <div className="container py-10 flex flex-col lg:flex-row justify-between items-center max-w-6xl">
-        <div className="space-y-10 py-16 max-w-[640px]">
+      <div className="container py-20 lg:py-10 flex flex-col lg:flex-row justify-between items-center max-w-6xl">
+        <div className="space-y-10 pb-16 lg:pb-0 py-0 lg:py-16 max-w-[640px]">
           <Title
             text="reserved for private dining"
             className="text-white2 max-w-[420px]"
