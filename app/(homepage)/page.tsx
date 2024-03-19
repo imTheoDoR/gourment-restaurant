@@ -11,9 +11,9 @@ export default function Home() {
   return (
     <main>
       <Discover />
-      {/* <section className="container pt-40 pb-32">
+      <section className="container pt-40 pb-32">
         <BestDeal />
-      </section> */}
+      </section>
       {/* <ExploreMenu /> */}
       {/* <MeetWithChef /> */}
       {/* <WhyUs /> */}
