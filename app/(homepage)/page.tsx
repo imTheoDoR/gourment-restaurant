@@ -15,7 +15,7 @@ export default function Home() {
         <BestDeal />
       </section>
       <ExploreMenu />
-      {/* <MeetWithChef /> */}
+      <MeetWithChef />
       {/* <WhyUs /> */}
       {/* <UnforgettableWrapp /> */}
       {/* <TestimonialWrapper /> */}
