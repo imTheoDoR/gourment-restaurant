@@ -6,7 +6,9 @@ const Evidence = ({ label, description }: EvidenceProps) => {
   return (
     <div className="flex flex-col justify-center items-center">
       <Title text={label} isDark />
-      <p className="capitalize text-lg pt-5 text-brown">{description}</p>
+      <p className="capitalize text-lg pt-2 lg:pt-5 text-brown">
+        {description}
+      </p>
     </div>
   );
 };

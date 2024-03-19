@@ -16,8 +16,8 @@ export default function Home() {
       </section>
       <ExploreMenu />
       <MeetWithChef />
-      {/* <WhyUs /> */}
-      {/* <UnforgettableWrapp /> */}
+      <WhyUs />
+      <UnforgettableWrapp />
       {/* <TestimonialWrapper /> */}
       {/* <ReservationWrapper /> */}
       <div className="pt-48"></div>

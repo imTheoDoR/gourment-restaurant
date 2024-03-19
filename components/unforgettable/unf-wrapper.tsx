@@ -7,16 +7,16 @@ import Evidence from "@/components/unforgettable/evidence";
 
 const UnforgettableWrapp = () => {
   return (
-    <section className="bg-white2 pb-16">
-      <div className="bg-gray rounded-br-[400px] ">
-        <div className="container flex items-center flex-row gap-10 w-full pt-10 space-x-20 relative">
-          <div className="space-y-8 px-10">
+    <section className="bg-white2 pb-20 lg:pb-16">
+      <div className="bg-gray rounded-br-[150px] lg:rounded-br-[400px] duration-300 overflow-x-hidden lg:overflow-x-visible shadow-md shadow-gray/50">
+        <div className="container flex flex-col-reverse lg:flex-row items-center gap-16 lg:gap-10 w-full pt-20 lg:pt-10 space-x-0 lg:space-x-20 relative">
+          <div className="space-y-8 lg:mt-0">
             <Image
               src="/images/unforgettable/plate1.png"
               alt="gourment restaurant unforgettable plate 1"
               width={509}
               height={262}
-              className="w-auto lg:w-full"
+              className="w-96 xl:w-[500px]"
             />
 
             <Image
@@ -24,7 +24,7 @@ const UnforgettableWrapp = () => {
               alt="gourment restaurant unforgettable plate 1"
               width={509}
               height={262}
-              className="w-auto lg:w-full"
+              className="w-96 xl:w-[500px]"
             />
 
             <Image
@@ -32,16 +32,17 @@ const UnforgettableWrapp = () => {
               alt="gourment restaurant unforgettable plate 1"
               width={501}
               height={168}
-              className="w-auto lg:w-full"
+              className="w-96 xl:w-[500px]"
             />
           </div>
+
           <div>
             <Title
               text="for your best unforgettable moments"
-              className="max-w-[400px] leading-[65px]"
+              className="max-w-max lg:max-w-[400px] leading-[50px] lg:leading-[65px]"
             />
 
-            <p className="text-white font-light max-w-[400px] pt-12">
+            <p className="text-white font-normal lg:font-light max-w-max lg:max-w-[400px] pt-12 text-base">
               At Gourmet Restaurant, we understand that every moment is
               precious. That&apos;s why we strive to create unforgettable
               experiences that you&apos;ll cherish for a lifetime.
@@ -68,13 +69,13 @@ const UnforgettableWrapp = () => {
             alt="gourment restaurant unforgettable moments"
             width={479}
             height={438}
-            className="max-w-[420px] absolute right-[10%] bottom-[-12%]"
+            className="max-w-[400px] w-full absolute right-[10%] bottom-[-12%] duration-300 hidden xl:block"
           />
         </div>
       </div>
 
       {/* evidence - unforgettable moments */}
-      <div className="pt-32 flex flex-col lg:flex-row justify-around container">
+      <div className="pt-16 lg:pt-32 flex flex-col lg:flex-row justify-around space-y-10 lg:space-y-0 container">
         <Evidence label="70+" description="main course options" />
         <Evidence label="5K+" description="happy customers" />
         <Evidence label="30" description="tables in total" />

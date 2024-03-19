@@ -14,7 +14,7 @@ const Title = ({
   return (
     <h1
       className={cn(
-        "font-colus text-5xl tracking-wide uppercase",
+        "font-colus text-4xl lg:text-5xl tracking-wide uppercase",
         isDark ? "text-brown" : "text-white",
         className
       )}
