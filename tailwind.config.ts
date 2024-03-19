@@ -28,6 +28,7 @@ const config = {
         reserve: "url('/images/reservation-bg.png')",
         discover: "url('/images/discover.png')",
         menu: "url('/images/plate2.png')",
+        about: "url('/images/about-bg.png')",
       },
       keyframes: {
         "accordion-down": {

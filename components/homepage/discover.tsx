@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { IoLocationOutline } from "react-icons/io5";
 import { CiClock2 } from "react-icons/ci";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import Link from "next/link";
 
 const Discover = () => {

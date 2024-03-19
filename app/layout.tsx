@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import "../globals.css";
-import Header from "@/components/header";
+import "./globals.css";
 import Footer from "@/components/footer";
 
 const font = Roboto({
@@ -10,8 +9,8 @@ const font = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Gourment Restaurant",
-  description: "Gourment Restaurant",
+  title: "Gourmet Restaurant",
+  description: "Gourmet Restaurant",
 };
 
 export default function RootLayout({
@@ -22,7 +21,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <Header />
         {children}
         <Footer />
       </body>

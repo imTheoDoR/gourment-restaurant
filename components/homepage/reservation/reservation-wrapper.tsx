@@ -2,7 +2,7 @@
 
 import { BsCheckCircle } from "react-icons/bs";
 import Title from "@/components/title";
-import ReservationForm from "@/components/reservation/reservation-form";
+import ReservationForm from "@/components/homepage/reservation/reservation-form";
 
 const ReservationWrapper = () => {
   return (

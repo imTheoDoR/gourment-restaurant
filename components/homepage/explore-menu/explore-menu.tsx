@@ -3,10 +3,9 @@
 import Title from "@/components/title";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { menu } from "@/data/menu";
-import ItemMenu from "@/components/explore-menu/item-menu";
-import { Button } from "../ui/button";
+import ItemMenu from "@/components/homepage/explore-menu/item-menu";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
 
 const ExploreMenu = () => {
   return (

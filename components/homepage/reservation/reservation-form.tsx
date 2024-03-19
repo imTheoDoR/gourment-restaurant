@@ -8,8 +8,8 @@ import { ReservationFormSchema } from "@/form-schemas";
 import { Input } from "@/components/ui/input";
 import { useState, useTransition } from "react";
 import { Calendar } from "@/components/ui/calendar";
-import { Button } from "../ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import { Button } from "../../ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "../../ui/dialog";
 import { BsCalendar2Plus, BsCalendarCheck, BsClock } from "react-icons/bs";
 import { LuCalendarClock } from "react-icons/lu";
 

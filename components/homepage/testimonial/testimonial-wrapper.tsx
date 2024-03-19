@@ -2,7 +2,7 @@
 
 import Title from "@/components/title";
 import { testimonials } from "@/data/testimonials";
-import TestimonialReview from "@/components/testimonial/testimonial-review";
+import TestimonialReview from "@/components/homepage/testimonial/testimonial-review";
 
 const TestimonialWrapper = () => {
   return (

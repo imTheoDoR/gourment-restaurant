@@ -7,12 +7,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import "./swiper.style.css";
+import "../swiper.style.css";
 
 // Import Swiper required modules
 import { Pagination } from "swiper/modules";
 import Image from "next/image";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import Link from "next/link";
 
 const BestDeal = () => {

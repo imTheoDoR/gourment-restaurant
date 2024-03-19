@@ -27,3 +27,8 @@ type TestimonialReviewProps = {
 type DelimiterProps = {
   isLight?: boolean;
 };
+
+type HeaderProps = {
+  title: string;
+  description: string;
+};
