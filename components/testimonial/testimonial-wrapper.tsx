@@ -14,7 +14,7 @@ const TestimonialWrapper = () => {
         isDark
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 justify-between gap-20 mt-32">
+      <div className="grid grid-cols-1 lg:grid-cols-3 justify-between gap-20 mt-32 space-y-10 lg:space-y-0">
         {testimonials.map(({ image, title, rating, description }, index) => (
           <TestimonialReview
             key={index}

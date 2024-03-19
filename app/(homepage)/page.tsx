@@ -18,7 +18,7 @@ export default function Home() {
       <MeetWithChef />
       <WhyUs />
       <UnforgettableWrapp />
-      {/* <TestimonialWrapper /> */}
+      <TestimonialWrapper />
       {/* <ReservationWrapper /> */}
       <div className="pt-48"></div>
     </main>
