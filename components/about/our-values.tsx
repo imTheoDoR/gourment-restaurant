@@ -11,7 +11,7 @@ import {
 
 const OurValues = () => {
   return (
-    <div className="bg-white2 py-32">
+    <section className="bg-white2 py-32">
       <div className="container">
         <Title text="our values" className="text-center pb-5" isDark />
         <p className="text-center text-gray text-xl max-w-[300px] mx-auto">
@@ -71,7 +71,7 @@ const OurValues = () => {
           </Accordion>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

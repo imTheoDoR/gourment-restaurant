@@ -3,6 +3,7 @@ type ItemMenuProps = {
   title: string;
   description: string;
   price: number;
+  secondary?: boolean;
 };
 
 type WhyItemProps = {
@@ -31,11 +32,18 @@ type DelimiterProps = {
 type HeaderProps = {
   title: string;
   description: string;
+  background: string;
 };
 
 type SingleChefProps = {
   image: string;
   name: string;
   position: string;
-  isChef?: boolean;
 };
+
+type MenuCategory =
+  | "starters"
+  | "main-course"
+  | "lunch"
+  | "desserts"
+  | "drinks";

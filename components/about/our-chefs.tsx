@@ -4,10 +4,12 @@ import Subtitle from "@/components/subtitle";
 import Title from "@/components/title";
 import { ourChefs } from "@/data/our-chefs";
 import AboutSingleChef from "./single-chef";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 const OurChefs = () => {
   return (
-    <div className="container py-20 lg:py-32">
+    <section className="container py-20 lg:py-32">
       <div className="text-center">
         <Subtitle text="Our chefs" />
         <Title text="meet our awesome chefs" className="mt-3 mb-5" isDark />
@@ -23,12 +25,17 @@ const OurChefs = () => {
               image={chef.image}
               name={chef.name}
               position={chef.position}
-              isChef={chef.isChef}
             />
           ))}
         </div>
+
+        <Link href="/meet-our-chefs">
+          <Button variant="red" size="lg" className="mt-12">
+            Meet our chefs
+          </Button>
+        </Link>
       </div>
-    </div>
+    </section>
   );
 };
 

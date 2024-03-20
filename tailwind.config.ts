@@ -31,6 +31,9 @@ const config = {
         about: "url('/images/about-bg.png')",
         leaf: "url('/images/leaf.svg')",
         flower: "url('/images/flower.svg')",
+        menubg: "url('/images/menu-bg.png')",
+        "menu-plate-1": "url('/images/plate3.png')",
+        "menu-plate-2": "url('/images/plate4.png')",
       },
       keyframes: {
         "accordion-down": {

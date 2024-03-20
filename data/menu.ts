@@ -18,11 +18,19 @@ export const menu = [
   },
   {
     category: "starters",
-    image: "beef.png",
-    title: "Beef Carpaccio",
+    image: "stuffed.png",
+    title: "Stuffed Mushrooms",
     description:
-      "Thin slices of raw beef, marinated in olive oil, lemon juice, grated Parmesan cheese, and arugula leaves.",
-    price: 12.99,
+      "Savor savory mushrooms filled with a delectable mixture of breadcrumbs, garlic, herbs, and Parmesan cheese, baked to perfection.",
+    price: 1.99,
+  },
+  {
+    category: "starters",
+    image: "spinach.png",
+    title: "Spinach and Artichoke Dip",
+    description:
+      "Dive into a creamy blend of spinach, artichokes, and melted cheese, served with crispy tortilla chips for dipping.",
+    price: 10.99,
   },
   {
     category: "starters",
@@ -42,10 +50,10 @@ export const menu = [
   },
   {
     category: "main-course",
-    image: "beef.png",
-    title: "Caprese Salad",
+    image: "spinach.png",
+    title: "Spinach and Artichoke Dip",
     description:
-      "A classic of Italian cuisine, this simple and delicious salad consists of slices of fresh mozzarella, ripe tomatoes, basil leaves, and extra virgin olive oil.",
+      "Dive into a creamy blend of spinach, artichokes, and melted cheese, served with crispy tortilla chips for dipping.",
     price: 10.99,
   },
   {
@@ -66,10 +74,23 @@ export const menu = [
   },
   {
     category: "drinks",
-    image: "beef.png",
-    title: "Beef Carpaccio",
+    image: "spinach.png",
+    title: "Spinach and Artichoke Dip",
     description:
-      "Thin slices of raw beef, marinated in olive oil, lemon juice, grated Parmesan cheese, and arugula leaves.",
-    price: 12.99,
+      "Dive into a creamy blend of spinach, artichokes, and melted cheese, served with crispy tortilla chips for dipping.",
+    price: 10.99,
   },
 ];
+
+export const menuCategoryDesc = {
+  starters:
+    "A starter typically refers to a small dish served at the beginning of a meal, intended to whet the appetite and set the tone for the dining experience. It often showcases bold flavors and fresh ingredients, providing diners with a tantalizing preview of what's to come.",
+  "main-course":
+    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, explicabo? Officia aut cumque explicabo hic veniam esse doloribus ipsa, nulla nisi magnam at eaque ullam.",
+  lunch:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, ipsa harum eos minima aperiam laboriosam accusamus? Quisquam tempore accusamus minus voluptate cumque alias, ullam temporibus!",
+  desserts:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo unde maiores, nobis nihil eos laudantium quis, quia reprehenderit suscipit optio doloremque voluptatem, ab laboriosam magni!",
+  drinks:
+    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id ab, quidem quisquam obcaecati illum eum ad quis! Modi expedita iste ratione ex repellendus quisquam quos.",
+};

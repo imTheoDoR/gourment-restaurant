@@ -7,6 +7,18 @@
   body {
     @apply h-full text-black bg-white;
   }
+
+  .menu-scroll::-webkit-scrollbar {
+    @apply w-3;
+  }
+
+  .menu-scroll::-webkit-scrollbar-track {
+    @apply bg-[#F0F0F0] rounded-md;
+  }
+
+  .menu-scroll::-webkit-scrollbar-thumb {
+    @apply bg-[#F1E5DE] rounded-md;
+  }
 }
 
 @font-face {

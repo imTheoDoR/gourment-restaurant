@@ -1,10 +1,16 @@
 "use client";
 
 import Navbar from "@/components/navbar";
+import { cn } from "@/lib/utils";
 
-const Header = ({ title, description }: HeaderProps) => {
+const Header = ({ title, description, background }: HeaderProps) => {
   return (
-    <div className="w-full min-h-[500px] bg-about bg-cover bg-center bg-no-repeat relative">
+    <div
+      className={cn(
+        "w-full min-h-[500px] bg-cover bg-center bg-no-repeat relative",
+        background
+      )}
+    >
       <div className="absolute left-0 right-0">
         <Navbar />
       </div>
