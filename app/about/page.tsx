@@ -1,4 +1,5 @@
 import AboutUs from "@/components/about/about-us";
+import OurPhilosophy from "@/components/about/our-philosophy";
 import Header from "@/components/header";
 
 export default function AboutPage() {
@@ -10,6 +11,7 @@ export default function AboutPage() {
       />
 
       <AboutUs />
+      <OurPhilosophy />
     </main>
   );
 }
