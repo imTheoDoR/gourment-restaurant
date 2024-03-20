@@ -71,11 +71,11 @@ const MeetWithChef = () => {
                   </div>
                 </div>
 
-                <div>
+                <Link href="/meet-our-chefs">
                   <Button className="bg-red text-white h-16 px-16 hover:bg-green shadow-md">
                     Meet With Chef&apos;s
                   </Button>
-                </div>
+                </Link>
               </div>
             </div>
           </div>

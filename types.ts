@@ -66,3 +66,10 @@ type VideoDrawerProps = {
   video: string;
   component: React.ReactNode;
 };
+
+type ChefProps = {
+  image: string;
+  name: string;
+  position: string;
+  description: string;
+};

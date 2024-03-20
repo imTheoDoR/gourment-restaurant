@@ -19,14 +19,16 @@ const OurChefs = () => {
         </p>
 
         <div className="flex flex-col lg:flex-row flex-wrap gap-5 gap-y-10 lg:gap-y-20 justify-around items-center max-w-6xl mx-auto mt-20">
-          {ourChefs.map((chef, index) => (
-            <AboutSingleChef
-              key={index}
-              image={chef.image}
-              name={chef.name}
-              position={chef.position}
-            />
-          ))}
+          {ourChefs
+            .map((chef, index) => (
+              <AboutSingleChef
+                key={index}
+                image={chef.image}
+                name={chef.name}
+                position={chef.position}
+              />
+            ))
+            .slice(0, 3)}
         </div>
 
         <Link href="/meet-our-chefs">
