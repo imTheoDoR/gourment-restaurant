@@ -47,3 +47,22 @@ type MenuCategory =
   | "lunch"
   | "desserts"
   | "drinks";
+
+type PlayButtonProps = {
+  haveText?: boolean;
+  isSmaller?: boolean;
+  secondary?: boolean;
+};
+
+type TitleProps = {
+  text: string;
+  isDark?: boolean;
+  className?: string;
+  isSmaller?: boolean;
+};
+
+type VideoDrawerProps = {
+  title: string;
+  video: string;
+  component: React.ReactNode;
+};

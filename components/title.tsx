@@ -2,21 +2,14 @@
 
 import { cn } from "@/lib/utils";
 
-const Title = ({
-  text,
-  isDark,
-  className,
-}: {
-  text: string;
-  isDark?: boolean;
-  className?: string;
-}) => {
+const Title = ({ text, isDark, className, isSmaller }: TitleProps) => {
   return (
     <h1
       className={cn(
-        "font-colus text-4xl lg:text-5xl tracking-wide uppercase",
+        "font-colus tracking-wide uppercase",
         isDark ? "text-brown" : "text-white",
-        className
+        className,
+        isSmaller ? "text-3xl lg:text-4xl" : "text-4xl lg:text-5xl"
       )}
     >
       {text}
