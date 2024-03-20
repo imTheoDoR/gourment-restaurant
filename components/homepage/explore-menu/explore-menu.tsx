@@ -29,16 +29,18 @@ const ExploreMenu = () => {
 
           <div className="mt-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-              {menu.map((item, index) => (
-                <TabsContent key={index} value={item.category}>
-                  <ItemMenu
-                    image={`/images/menu/${item.image}`}
-                    title={item.title}
-                    description={item.description}
-                    price={item.price}
-                  />
-                </TabsContent>
-              ))}
+              {menu
+                .map((item, index) => (
+                  <TabsContent key={index} value={item.category}>
+                    <ItemMenu
+                      image={`/images/menu/${item.image}`}
+                      title={item.title}
+                      description={item.description}
+                      price={item.price}
+                    />
+                  </TabsContent>
+                ))
+                .slice(0, 4)}
             </div>
           </div>
         </Tabs>

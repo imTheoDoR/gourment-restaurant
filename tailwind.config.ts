@@ -34,6 +34,7 @@ const config = {
         menubg: "url('/images/menu-bg.png')",
         "menu-plate-1": "url('/images/plate3.png')",
         "menu-plate-2": "url('/images/plate4.png')",
+        preparation: "url('/images/preparation-bg.png')",
       },
       keyframes: {
         "accordion-down": {
