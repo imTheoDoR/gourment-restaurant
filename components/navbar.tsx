@@ -74,14 +74,17 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
       <nav className="container flex items-center justify-between pt-3">
-        <Image
-          src="/images/logo.svg"
-          alt="Gourmet Restaurant Logo"
-          width={174}
-          height={90}
-          className="w-32 lg:w-40"
-        />
+        <Link href="/">
+          <Image
+            src="/images/logo.svg"
+            alt="Gourmet Restaurant Logo"
+            width={174}
+            height={90}
+            className="w-32 lg:w-40"
+          />
+        </Link>
 
         {/* Desktop menu */}
         <ul className="hidden lg:flex items-center space-x-16">

@@ -29,6 +29,8 @@ const config = {
         discover: "url('/images/discover.png')",
         menu: "url('/images/plate2.png')",
         about: "url('/images/about-bg.png')",
+        leaf: "url('/images/leaf.svg')",
+        flower: "url('/images/flower.svg')",
       },
       keyframes: {
         "accordion-down": {
