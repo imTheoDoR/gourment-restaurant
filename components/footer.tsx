@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray">
       <div className="container flex flex-col lg:flex-row justify-center gap-20 py-20">
-        <div className="max-w-max lg:max-w-xs">
+        <div className="max-w-max lg:max-w-xs mx-auto">
           <Image
             src="/images/logo.svg"
             alt="gourments restaurant logo footer"
