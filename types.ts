@@ -32,3 +32,10 @@ type HeaderProps = {
   title: string;
   description: string;
 };
+
+type SingleChefProps = {
+  image: string;
+  name: string;
+  position: string;
+  isChef?: boolean;
+};

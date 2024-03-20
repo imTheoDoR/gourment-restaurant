@@ -1,4 +1,5 @@
 import AboutUs from "@/components/about/about-us";
+import OurChefs from "@/components/about/our-chefs";
 import OurPhilosophy from "@/components/about/our-philosophy";
 import OurValues from "@/components/about/our-values";
 import Header from "@/components/header";
@@ -14,6 +15,7 @@ export default function AboutPage() {
       <AboutUs />
       <OurPhilosophy />
       <OurValues />
+      <OurChefs />
     </main>
   );
 }
