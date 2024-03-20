@@ -1,5 +1,6 @@
 import Header from "@/components/header";
 import OurMenu from "@/components/menu/our-menu";
+import PDFMenu from "@/components/menu/pdf-menu";
 import Preparation from "@/components/menu/preparation";
 
 export default function MenuPage() {
@@ -13,6 +14,7 @@ export default function MenuPage() {
 
       <OurMenu />
       <Preparation />
+      <PDFMenu />
     </main>
   );
 }
