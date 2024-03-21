@@ -229,7 +229,10 @@ const ContactForm = () => {
 
                         <span className="ml-3 text-dark/50 text-sm">
                           Read our
-                          <Link href="#terms and conditions">
+                          <Link
+                            href="#terms-and-conditions"
+                            className="text-brown"
+                          >
                             {" "}
                             terms and conditions
                           </Link>
