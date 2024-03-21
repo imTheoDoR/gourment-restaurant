@@ -1,3 +1,4 @@
+import BestDealTwo from "@/components/home2/best-deal-two";
 import HeaderTwo from "@/components/home2/header-two";
 import OurMenuTwo from "@/components/home2/our-menu-two";
 import WelcomeTo from "@/components/home2/welcome-to";
@@ -37,6 +38,7 @@ export default function HomeTwo() {
 
       <WelcomeTo />
       <OurMenuTwo />
+      <BestDealTwo />
     </main>
   );
 }

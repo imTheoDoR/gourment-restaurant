@@ -87,3 +87,10 @@ type FeatureItemProps = {
   title: string;
   description: string;
 };
+
+type SingleDealProps = {
+  image: string;
+  name: string;
+  price: number;
+  isDealWeek: boolean;
+};
