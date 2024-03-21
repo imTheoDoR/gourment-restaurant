@@ -37,6 +37,7 @@ const config = {
         preparation: "url('/images/preparation-bg.png')",
         meetchefs: "url('/images/meet-chefs-bg.png')",
         contact: "url('/images/contact-bg.png')",
+        soon: "url('/images/coming-bg.png')",
       },
       keyframes: {
         "accordion-down": {

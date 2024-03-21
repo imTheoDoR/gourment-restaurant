@@ -153,7 +153,7 @@ const Navbar = () => {
                 Everyday: 10 AM To 11 PM
               </p>
 
-              <Link href="tel:180056003002">
+              <Link href="tel:1800123321">
                 <Button className="w-full h-12 text-lg" variant="btnHead">
                   Call Us
                 </Button>
