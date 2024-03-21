@@ -8,11 +8,11 @@ const font = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Coming Soon - Gourmet Restaurant",
+  title: "Gourmet Restaurant",
   description: "Gourmet Restaurant",
 };
 
-export default function ComingSoonLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

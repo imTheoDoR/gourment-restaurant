@@ -1,16 +1,26 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { navLinks } from "@/data/nav-links";
 import Image from "next/image";
 import Link from "next/link";
 import { IoLocationOutline } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import { IoChevronUp } from "react-icons/io5";
+import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [desktopDropDown, setDekstopDropDown] = useState<
+    boolean | number | null
+  >(null);
+  const [mobileDropdown, setMobileDropdown] = useState<number | boolean | null>(
+    null
+  );
+  const [closingTimer, setClosingTimer] = useState<NodeJS.Timeout | null>(null);
+
   const pathname = usePathname();
 
   const topLine = {
@@ -47,7 +57,7 @@ const Navbar = () => {
       transition: {
         type: "tween",
         ease: "easeInOut",
-        duration: 0.3,
+        duration: 0,
       },
     },
     opened: {
@@ -55,6 +65,97 @@ const Navbar = () => {
       opacity: 1,
     },
   };
+
+  const dropdownVariants = {
+    closed: {
+      opacity: 0,
+      y: "-20px",
+      display: "none",
+      transition: {
+        duration: 0.5,
+        display: {
+          delay: 0.5,
+        },
+      },
+    },
+
+    opened: {
+      opacity: 1,
+      y: 0,
+      display: "block",
+      transition: {
+        duration: 0.5,
+        display: {
+          delay: 0,
+        },
+      },
+    },
+  };
+
+  const dropdownMenuVariants = {
+    closed: {
+      opacity: 0,
+      y: "-20px",
+      display: "none",
+      transition: {
+        duration: 0.5,
+        display: {
+          delay: 0.5,
+        },
+      },
+    },
+
+    opened: {
+      opacity: 1,
+      y: 0,
+      display: "flex",
+      transition: {
+        duration: 0.5,
+        display: {
+          delay: 0,
+        },
+      },
+    },
+  };
+
+  const openDropdown = (index: number) => {
+    if (closingTimer) {
+      clearTimeout(closingTimer);
+    }
+
+    setDekstopDropDown(index);
+  };
+
+  const closeDropdown = () => {
+    const timer = setTimeout(() => {
+      setDekstopDropDown(null);
+    }, 150);
+
+    setClosingTimer(timer);
+  };
+
+  const toggleMobileDropdown = (index: any) => {
+    if (mobileDropdown === index) {
+      setMobileDropdown(null);
+    } else {
+      setMobileDropdown(index);
+    }
+  };
+
+  // close the mobile menu after the route was changed
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setOpen(false);
+    };
+
+    window.addEventListener("popstate", handleRouteChange);
+    window.addEventListener("hashchange", handleRouteChange);
+
+    return () => {
+      window.removeEventListener("popstate", handleRouteChange);
+      window.removeEventListener("hashchange", handleRouteChange);
+    };
+  }, []);
 
   return (
     <>
@@ -88,18 +189,63 @@ const Navbar = () => {
 
         {/* Desktop menu */}
         <ul className="hidden lg:flex items-center space-x-16">
-          {navLinks.map((link, index) => (
-            <li key={index}>
-              <Link
-                href={link.href}
-                className={`${
-                  pathname === link.href ? "text-orange2" : "text-white"
-                } hover:text-orange2 duration-200`}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          {navLinks.map((link, index) =>
+            link.sublinks ? (
+              <li key={index} className="relative">
+                <Link
+                  href={link.href}
+                  onMouseEnter={() => openDropdown(index)}
+                  onMouseLeave={closeDropdown}
+                  className={`${
+                    pathname === link.href ? "text-orange2" : "text-white"
+                  } hover:text-orange2 duration-200 flex items-center`}
+                >
+                  {link.label}
+                  <IoChevronUp
+                    className={cn(
+                      "ml-3 duration-200",
+                      desktopDropDown === index ? "rotate-180" : null
+                    )}
+                  />
+                </Link>
+
+                <motion.ul
+                  variants={dropdownVariants}
+                  initial="closed"
+                  animate={desktopDropDown === index ? "opened" : "closed"}
+                  onMouseEnter={() => openDropdown(index)}
+                  onMouseLeave={closeDropdown}
+                  className="absolute px-5 py-3 rounded-r-[18px] rounded-b-[18px] w-[200px] bg-white/30 backdrop-blur-lg space-y-2 border-b-2 border-orange2 mt-4"
+                >
+                  {link.sublinks.map((sublink, index) => (
+                    <li key={index}>
+                      <Link
+                        href={sublink.href}
+                        className={`${
+                          pathname === sublink.href
+                            ? "text-orange2"
+                            : "text-white"
+                        } hover:text-orange2 duration-200`}
+                      >
+                        {sublink.label}
+                      </Link>
+                    </li>
+                  ))}
+                </motion.ul>
+              </li>
+            ) : (
+              <li key={index}>
+                <Link
+                  href={link.href}
+                  className={`${
+                    pathname === link.href ? "text-orange2" : "text-white"
+                  } hover:text-orange2 duration-200`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            )
+          )}
 
           <Button variant="btnHead" size="book">
             Book a Table
@@ -112,7 +258,7 @@ const Navbar = () => {
         <Button
           size="icon"
           variant="default"
-          className="z-50 w-9 h-7 flex lg:hidden flex-col justify-between mt-3"
+          className="z-[999] w-9 h-7 flex lg:hidden flex-col justify-between mt-3"
           onClick={() => setOpen(!open)}
         >
           <motion.div
@@ -134,16 +280,51 @@ const Navbar = () => {
 
         {open && (
           <motion.div
-            className="w-screen h-screen bg-gray/80 backdrop-blur-xl absolute top-0 left-0 z-40 flex lg:hidden flex-col justify-center items-center space-y-5"
+            className="w-screen h-screen bg-gray/80 backdrop-blur-xl absolute top-0 left-0 flex lg:hidden flex-col justify-center items-center space-y-5 z-50"
             variants={menuVariants}
             initial="closed"
             animate="opened"
           >
-            {navLinks.map((link, index) => (
-              <Link key={index} href={link.href} className="text-xl text-white">
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link, index) =>
+              link.sublinks ? (
+                <div key={index} className="text-center">
+                  <Link
+                    href={link.href}
+                    className="text-xl text-white"
+                    onClick={() => toggleMobileDropdown(index)}
+                  >
+                    {link.label}
+                  </Link>
+
+                  {mobileDropdown === index && (
+                    <motion.div
+                      variants={dropdownMenuVariants}
+                      initial="closed"
+                      animate={mobileDropdown === index ? "opened" : "closed"}
+                      className="flex flex-col justify-center items-center px-5 py-3 rounded-b-[18px] min-w-[250px] bg-white/30 backdrop-blur-lg space-y-2 border-b-2 border-orange2"
+                    >
+                      {link.sublinks.map((sublink, index) => (
+                        <Link
+                          key={index}
+                          href={sublink.href}
+                          className="text-xl text-white"
+                        >
+                          {sublink.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={index}
+                  href={link.href}
+                  className="text-xl text-white"
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
 
             <div className="pt-10 text-center space-y-4">
               <span className="text-white font-light">
