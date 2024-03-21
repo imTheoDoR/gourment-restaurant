@@ -1,10 +1,12 @@
 import HeaderTwo from "@/components/home2/header-two";
+import WelcomeTo from "@/components/home2/welcome-to";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { BsCalendar2Check } from "react-icons/bs";
 
 export default function HomeTwo() {
   return (
-    <main>
+    <main className="bg-white2/40">
       <div className="">
         <HeaderTwo />
       </div>
@@ -16,19 +18,23 @@ export default function HomeTwo() {
             no other!
           </div>
           <div className="flex flex-col lg:flex-row gap-3 lg:gap-5">
-            <Button variant="red" className="h-14 text-lg">
-              <BsCalendar2Check className="mr-3 w-7 h-7" />
-              Reserve Today
-            </Button>
+            <Link href="/contact">
+              <Button variant="red" className="h-14 text-lg">
+                <BsCalendar2Check className="mr-3 w-7 h-7" />
+                Reserve Today
+              </Button>
+            </Link>
 
-            <Button className="h-14 text-lg border-2 border-white text-white capitalize hover:bg-white duration-300 hover:text-dark">
-              see our menu
-            </Button>
+            <Link href="/menu">
+              <Button className="h-14 text-lg border-2 border-white text-white capitalize hover:bg-white duration-300 hover:text-dark">
+                see our menu
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
 
-      <div className="mt-20"></div>
+      <WelcomeTo />
     </main>
   );
 }

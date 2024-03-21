@@ -74,3 +74,9 @@ type ChefProps = {
   position: string;
   description: string;
 };
+
+type FeatureItemProps = {
+  image: string;
+  title: string;
+  description: string;
+};

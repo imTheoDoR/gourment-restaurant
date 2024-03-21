@@ -35,7 +35,7 @@ const ReservationForm = () => {
   };
 
   return (
-    <div className="bg-white2 max-w-[400px]">
+    <div className="bg-white2 max-w-[400px] w-full border-b-[7px] border-[#FAE3C6]">
       <div className="bg-[#5D5965] text-center py-6">
         <h4 className="font-colus text-yellow text-lg">
           make online reservation
@@ -157,8 +157,7 @@ const ReservationForm = () => {
           <Button
             type="submit"
             variant="reserve"
-            size="reserve"
-            className="text-white2"
+            className="text-white2 h-14 px-12 text-lg"
           >
             <BsCalendarCheck className="mr-3 w-6 h-6" />
             Reserve Today
