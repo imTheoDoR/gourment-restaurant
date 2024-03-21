@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import Footer from "@/components/footer";
-import ComingSoon from "@/components/coming-soon";
 
 const font = Roboto({
   subsets: ["latin"],
@@ -19,20 +18,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // enable/disable coming soon
-  const comingSoon = true;
-
   return (
     <html lang="en">
       <body className={font.className}>
-        {comingSoon ? (
-          <ComingSoon />
-        ) : (
-          <>
-            {children}
-            <Footer />
-          </>
-        )}
+        {children}
+        <Footer />
       </body>
     </html>
   );
