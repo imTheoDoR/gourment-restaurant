@@ -3,7 +3,7 @@
 import Navbar from "@/components/navbar";
 import { cn } from "@/lib/utils";
 
-const Header = ({ title, description, className }: HeaderProps) => {
+const Header = ({ title, description, className, component }: HeaderProps) => {
   return (
     <div
       className={cn(
@@ -38,6 +38,8 @@ const Header = ({ title, description, className }: HeaderProps) => {
             </div>
           </>
         )}
+
+        {component && component}
       </div>
     </div>
   );
