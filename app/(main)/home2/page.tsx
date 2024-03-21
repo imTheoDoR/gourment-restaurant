@@ -1,9 +1,10 @@
+import Link from "next/link";
 import BestDealTwo from "@/components/home2/best-deal-two";
 import HeaderTwo from "@/components/home2/header-two";
+import MasterChef from "@/components/home2/master-chef";
 import OurMenuTwo from "@/components/home2/our-menu-two";
 import WelcomeTo from "@/components/home2/welcome-to";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { BsCalendar2Check } from "react-icons/bs";
 
 export default function HomeTwo() {
@@ -39,6 +40,7 @@ export default function HomeTwo() {
       <WelcomeTo />
       <OurMenuTwo />
       <BestDealTwo />
+      <MasterChef />
     </main>
   );
 }

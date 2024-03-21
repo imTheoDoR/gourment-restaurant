@@ -39,6 +39,7 @@ const config = {
         meetchefs: "url('/images/meet-chefs-bg.png')",
         contact: "url('/images/contact-bg.png')",
         soon: "url('/images/coming-bg.png')",
+        meetwo: "url('/images/chefphoto.png')",
       },
       keyframes: {
         "accordion-down": {
