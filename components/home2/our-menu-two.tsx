@@ -2,13 +2,15 @@
 
 import Title from "@/components/title";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import ItemMenu from "@/components/homepage/explore-menu/item-menu";
-import Image from "next/image";
 import { menu, menuCategoryDesc } from "@/data/menu";
-import { useState } from "react";
 import transformTitle from "@/lib/transform-title";
+import Image from "next/image";
+import { useState } from "react";
+import ItemMenuTwo from "./item-menu-two";
+import Link from "next/link";
+import { Button } from "../ui/button";
 
-const OurMenu = () => {
+const OurMenuTwo = () => {
   const [menuCategory, setMenuCategory] = useState("starters");
 
   const onChangeMenu = (menu: string) => {
@@ -16,23 +18,20 @@ const OurMenu = () => {
   };
 
   return (
-    <section className="bg-white2/50 relative py-20 lg:py-32 overflow-x-hidden">
+    <section className="bg-white2 py-20 lg:py relative overflow-y-hidden">
       {/* background plate 1 */}
-      <div className="bg-menu-plate-1 bg-contain bg-no-repeat w-[303px] h-[680px] absolute top-1/2 bottom-1/2 right-0 z-10 hidden xl:block" />
+      <div className="bg-menu-plate-1 bg-contain bg-no-repeat w-[303px] h-[680px] absolute top-1/2 bottom-1/2 transform -translate-y-1/2 right-0 z-10 hidden xl:block" />
 
-      {/* background plate 2 */}
-      <div className="bg-menu-plate-2 bg-contain bg-no-repeat w-[624px] h-[1174px] absolute bottom-0 left-0 z-10" />
-
-      <div className="container relative z-40">
-        <Title text="our menu" className="text-center pb-5" isDark />
-        <p className="text-lg text-dark max-w-[600px] text-center mx-auto">
+      <div className="container">
+        <Title text="our menu" className="text-dark text-center pb-5" />
+        <p className="text-dark text-center max-w-lg mx-auto">
           Indulge in a world of flavor with our diverse and tantalizing menu at
           Gourmet Restaurant.
         </p>
 
         <Tabs
           defaultValue={menuCategory}
-          className="max-w-max lg:max-w-7xl mx-auto mt-16"
+          className="max-w-max lg:max-w-7xl mx-auto mt-16 relative z-50"
           onValueChange={onChangeMenu}
         >
           <TabsList className="bg-[#88776E] mx-auto max-w-auto lg:max-w-5xl w-full flex flex-wrap justify-center lg:justify-between items-center">
@@ -47,35 +46,44 @@ const OurMenu = () => {
             <TabsContent value={menuCategory}>
               <div className="flex flex-col lg:flex-row gap-x-0 lg:gap-x-20 items-center">
                 {/* tab col 1 */}
-                <div className="space-y-5 lg:space-y-10 w-auto lg:w-1/3">
+                <div className="w-auto lg:w-1/3">
                   <h4 className="font-colus text-dark text-xl">
                     {transformTitle(menuCategory)}
                   </h4>
-                  <p className="text-gray max-w-max lg:max-w-[400px]">
+                  <p className="text-gray max-w-max lg:max-w-[400px] pb-5">
                     {String(menuCategoryDesc[menuCategory as MenuCategory])}
                   </p>
 
                   <Image
-                    src="/images/menu/starters.png"
+                    src="/images/home2/menu-image.png"
                     alt="gourmet restaurant menu starters"
                     width={431}
                     height={488}
-                    className="w-full hidden lg:block"
+                    className="w-full hidden lg:block p-2"
                   />
+
+                  <div className="text-center bg-white/5 backdrop-blur-xl -mt-32 px-5 py-8 shadow-md space-y-3 hidden lg:block">
+                    <p className="text-white">
+                      Visit us for the ultimate culinary adventure
+                    </p>
+                    <p className="text-white">
+                      179 Murphy Court Valley, Dublin 92182
+                    </p>
+                    <p className="text-white">Everyday : 10 AM To 11 PM</p>
+                  </div>
                 </div>
 
                 {/* tab col 2 */}
-                <div className="space-y-5 w-auto mt-16 lg:w-2/3 overflow-y-auto max-h-[800px] pr-3 lg:pr-5 menu-scroll">
+                <div className="w-auto mt-16 lg:w-2/3 pr-3 lg:pr-5 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
                   {menu
                     .filter((item) => item.category === menuCategory)
                     .map((item, index) => (
-                      <ItemMenu
+                      <ItemMenuTwo
                         key={index}
                         image={`/images/menu/${item.image}`}
                         title={item.title}
                         description={item.description}
                         price={item.price}
-                        secondary
                       />
                     ))}
                 </div>
@@ -83,9 +91,17 @@ const OurMenu = () => {
             </TabsContent>
           </div>
         </Tabs>
+
+        <div className="text-center mt-20">
+          <Link href="/menu">
+            <Button className="text-brown border border-sand px-10 py-6 text-lg hover:bg-sand/30 bg-transparent">
+              Browse All Menu
+            </Button>
+          </Link>
+        </div>
       </div>
     </section>
   );
 };
 
-export default OurMenu;
+export default OurMenuTwo;

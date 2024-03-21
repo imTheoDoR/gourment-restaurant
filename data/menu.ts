@@ -18,6 +18,14 @@ export const menu = [
   },
   {
     category: "starters",
+    image: "bruschetta.png",
+    title: "Bruschetta al Pomodoro e Basilico",
+    description:
+      "Slices of toasted bread drizzled with extra virgin olive oil and topped with diced tomatoes and fresh basil leaves.",
+    price: 8.99,
+  },
+  {
+    category: "starters",
     image: "stuffed.png",
     title: "Stuffed Mushrooms",
     description:

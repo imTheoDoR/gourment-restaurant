@@ -1,4 +1,5 @@
 import HeaderTwo from "@/components/home2/header-two";
+import OurMenuTwo from "@/components/home2/our-menu-two";
 import WelcomeTo from "@/components/home2/welcome-to";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -35,6 +36,7 @@ export default function HomeTwo() {
       </div>
 
       <WelcomeTo />
+      <OurMenuTwo />
     </main>
   );
 }

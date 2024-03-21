@@ -6,6 +6,13 @@ type ItemMenuProps = {
   secondary?: boolean;
 };
 
+type ItemMenuTwoProps = {
+  image: string;
+  title: string;
+  description: string;
+  price: number;
+};
+
 type WhyItemProps = {
   image: string;
   title: string;
