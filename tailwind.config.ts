@@ -23,6 +23,7 @@ const config = {
       },
       backgroundImage: {
         hero: "url('/images/hero_bg.png')",
+        hero2: "url('/images/home2/home2-bg.png')",
         sale: "url('/images/sale.png')",
         meet: "url('/images/meet-bg.png')",
         reserve: "url('/images/reservation-bg.png')",

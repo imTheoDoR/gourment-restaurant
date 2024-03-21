@@ -215,7 +215,7 @@ const Navbar = () => {
                   animate={desktopDropDown === index ? "opened" : "closed"}
                   onMouseEnter={() => openDropdown(index)}
                   onMouseLeave={closeDropdown}
-                  className="absolute px-5 py-3 rounded-r-[18px] rounded-b-[18px] w-[200px] bg-white/30 backdrop-blur-lg space-y-2 border-b-2 border-orange2 mt-4"
+                  className="absolute px-5 py-3 rounded-r-[18px] rounded-b-[18px] w-[200px] bg-white/30 backdrop-blur-lg space-y-2 border-b-2 border-orange2 mt-4 z-50"
                 >
                   {link.sublinks.map((sublink, index) => (
                     <li key={index}>
@@ -258,7 +258,7 @@ const Navbar = () => {
         <Button
           size="icon"
           variant="default"
-          className="z-[999] w-9 h-7 flex lg:hidden flex-col justify-between mt-3"
+          className="z-[9999] w-9 h-7 flex lg:hidden flex-col justify-between mt-3"
           onClick={() => setOpen(!open)}
         >
           <motion.div
@@ -280,7 +280,7 @@ const Navbar = () => {
 
         {open && (
           <motion.div
-            className="w-screen h-screen bg-gray/80 backdrop-blur-xl absolute top-0 left-0 flex lg:hidden flex-col justify-center items-center space-y-5 z-50"
+            className="w-screen h-screen bg-gray/80 backdrop-blur-xl absolute top-0 left-0 flex lg:hidden flex-col justify-center items-center space-y-5 z-[999]"
             variants={menuVariants}
             initial="closed"
             animate="opened"
