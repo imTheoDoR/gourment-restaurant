@@ -7,3 +7,16 @@ export const ReservationFormSchema = z.object({
   time: z.date(),
   date: z.date(),
 });
+
+export const ContactFormSchema = z.object({
+  firstName: z.string().min(1, { message: "First Name is required!" }),
+  lastName: z.string().min(1, { message: "Last Name is required!" }),
+  email: z.string().min(1, { message: "An email address is required." }),
+  guests: z.string().transform((value) => parseInt(value, 10)),
+  // time: z.string(),
+  // date: z.date(),
+  note: z.string(),
+  terms: z.literal(true, {
+    errorMap: () => ({ message: "You must accept the terms and conditions." }),
+  }),
+});

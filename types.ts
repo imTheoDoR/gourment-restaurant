@@ -30,9 +30,9 @@ type DelimiterProps = {
 };
 
 type HeaderProps = {
-  title: string;
-  description: string;
-  background: string;
+  title?: string;
+  description?: string;
+  className: string;
 };
 
 type SingleChefProps = {

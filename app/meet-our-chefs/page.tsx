@@ -9,7 +9,7 @@ export default function MeetPage() {
       <Header
         title="meet our chefs"
         description="discover our team"
-        background="bg-meetchefs"
+        className="bg-meetchefs"
       />
 
       <OurTeam />

@@ -10,7 +10,7 @@ export default function AboutPage() {
       <Header
         title="about gourmet"
         description="we take pride in our passion for culinary artistry and unparalleled hospitality."
-        background="bg-about"
+        className="bg-about"
       />
 
       <AboutUs />

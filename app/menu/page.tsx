@@ -9,7 +9,7 @@ export default function MenuPage() {
       <Header
         title="our special dishes"
         description="discover our culinary creations"
-        background="bg-menubg"
+        className="bg-menubg"
       />
 
       <OurMenu />

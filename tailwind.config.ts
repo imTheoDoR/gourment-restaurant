@@ -36,6 +36,7 @@ const config = {
         "menu-plate-2": "url('/images/plate4.png')",
         preparation: "url('/images/preparation-bg.png')",
         meetchefs: "url('/images/meet-chefs-bg.png')",
+        contact: "url('/images/contact-bg.png')",
       },
       keyframes: {
         "accordion-down": {
