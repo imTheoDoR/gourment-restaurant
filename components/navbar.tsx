@@ -247,9 +247,11 @@ const Navbar = () => {
             )
           )}
 
-          <Button variant="btnHead" size="book">
-            Book a Table
-          </Button>
+          <Link href="/contact">
+            <Button variant="btnHead" size="book">
+              Book a Table
+            </Button>
+          </Link>
         </ul>
 
         {/* Mobile menu */}
