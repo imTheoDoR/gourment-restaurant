@@ -37,6 +37,10 @@ export const navLinks = [
         label: "Not Found",
         href: "/404",
       },
+      {
+        label: "FAQ",
+        href: "/faq",
+      },
     ],
   },
   {

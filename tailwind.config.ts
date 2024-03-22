@@ -40,6 +40,7 @@ const config = {
         contact: "url('/images/contact-bg.png')",
         soon: "url('/images/coming-bg.png')",
         meetwo: "url('/images/chefphoto.png')",
+        faq: "url('/images/faq-bg.png')",
       },
       keyframes: {
         "accordion-down": {

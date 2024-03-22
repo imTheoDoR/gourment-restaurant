@@ -30,9 +30,11 @@ const AccordionTrigger = React.forwardRef<
       )}
       {...props}
     >
-      <div className="flex items-center text-xl font-colus text-dark">
-        <FaCheckCircle className="w-6 h-6 border-2 border-red text-red rounded-full p-px mr-3" />
-        {children}
+      <div className="text-lg font-colus text-dark flex w-full text-start items-center">
+        <div className="block">
+          <FaCheckCircle className="w-6 h-6 border-2 border-red text-red rounded-full p-px mr-3" />
+        </div>
+        <span>{children}</span>
       </div>
       <ChevronDownIcon className="h-4 w-4 shrink-0 text-dark transition-transform duration-200 dark:text-neutral-400" />
     </AccordionPrimitive.Trigger>
