@@ -6,6 +6,8 @@ import OurMenuTwo from "@/components/home2/our-menu-two";
 import WelcomeTo from "@/components/home2/welcome-to";
 import { Button } from "@/components/ui/button";
 import { BsCalendar2Check } from "react-icons/bs";
+import GourmetGallery from "@/components/home2/gallery";
+import TestimonialTwo from "@/components/home2/testimonial-two";
 
 export default function HomeTwo() {
   return (
@@ -41,6 +43,8 @@ export default function HomeTwo() {
       <OurMenuTwo />
       <BestDealTwo />
       <MasterChef />
+      <GourmetGallery />
+      <TestimonialTwo />
     </main>
   );
 }

@@ -3,7 +3,6 @@
 import Title from "@/components/title";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import Image from "next/image";
 
 const MasterChef = () => {
   return (

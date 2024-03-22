@@ -94,3 +94,9 @@ type SingleDealProps = {
   price: number;
   isDealWeek: boolean;
 };
+
+type GalleryProps = {
+  type: "image" | "video";
+  src: string;
+  prevImage?: string;
+};
