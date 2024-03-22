@@ -19,6 +19,7 @@ const ComingSoon = () => {
     days: string;
     hours: string;
     minutes: string;
+    seconds: string;
   } | null>(null);
 
   const form = useForm<z.infer<typeof NewsletterSchema>>({
@@ -44,6 +45,7 @@ const ComingSoon = () => {
       days: "00",
       hours: "00",
       minutes: "00",
+      seconds: "00",
     };
 
     if (difference > 0) {
@@ -54,7 +56,10 @@ const ComingSoon = () => {
         hours: Math.floor((difference / (1000 * 60 * 60)) % 24)
           .toString()
           .padStart(2, "0"),
-        minutes: Math.floor((difference / (1000 / 60)) % 60)
+        minutes: Math.floor((difference / (1000 * 60)) % 60)
+          .toString()
+          .padStart(2, "0"),
+        seconds: Math.floor((difference / 1000) % 60)
           .toString()
           .padStart(2, "0"),
       };
@@ -69,6 +74,20 @@ const ComingSoon = () => {
     }, 1000);
 
     return () => clearTimeout(timer);
+  }, []);
+
+  // Update countdown
+  useEffect(() => {
+    const updateContdown = () => {
+      const newTimeLeft = calculateTimeLeft(targetDate);
+      setTimeLeft(newTimeLeft);
+    };
+
+    const timer = setInterval(updateContdown, 1000);
+
+    updateContdown();
+
+    return () => clearInterval(timer);
   }, []);
 
   return (
@@ -99,24 +118,30 @@ const ComingSoon = () => {
               we open in:
             </span>
 
-            <div className="flex gap-x-3 ml-0 lg:ml-5 pt-3 lg:pt-0">
-              <div className="bg-[#636161] text-white text-center py-2 px-5 min-w-20">
+            <div className="flex flex-wrap px-5 justify-center gap-3 ml-0 lg:ml-5 pt-3 lg:pt-0">
+              <div className="bg-[#636161] text-white text-center py-2 px-5 min-w-20 w-1/3 lg:w-auto">
                 <span className="font-bold text-4xl">
                   {timeLeft && timeLeft.days}
                 </span>
                 <p className="capitalize text-[14px] text-white/70">days</p>
               </div>
-              <div className="bg-[#636161] text-white text-center py-2 px-5 min-w-20">
+              <div className="bg-[#636161] text-white text-center py-2 px-5 min-w-20 w-1/3 lg:w-auto">
                 <span className="font-bold text-4xl">
                   {timeLeft && timeLeft.hours}
                 </span>
                 <p className="capitalize text-[14px] text-white/70">hours</p>
               </div>
-              <div className="bg-[#636161] text-white text-center py-2 px-5 min-w-20">
+              <div className="bg-[#636161] text-white text-center py-2 px-5 min-w-20 w-1/3 lg:w-auto">
                 <span className="font-bold text-4xl">
                   {timeLeft && timeLeft.minutes}
                 </span>
                 <p className="capitalize text-[14px] text-white/70">minutes</p>
+              </div>
+              <div className="bg-[#636161] text-white text-center py-2 px-5 min-w-20 w-1/3 lg:w-auto">
+                <span className="font-bold text-4xl">
+                  {timeLeft && timeLeft.seconds}
+                </span>
+                <p className="capitalize text-[14px] text-white/70">seconds</p>
               </div>
             </div>
           </div>
