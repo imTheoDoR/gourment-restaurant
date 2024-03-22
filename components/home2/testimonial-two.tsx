@@ -114,9 +114,9 @@ const TestimonialTwo = () => {
             text="read what others have to say"
             className="text-dark !text-3xl max-w-[400px] pt-3 pb-5"
           />
-          <p className="text-dark">
+          <div className="text-dark min-h-[140px] max-h-[180px] h-full overflow-y-auto">
             “{testimonialsTwo[currentTestimonial].description}”
-          </p>
+          </div>
 
           <div className="pt-10">
             <p className="text-2xl font-bold">

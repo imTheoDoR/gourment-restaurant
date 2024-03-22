@@ -9,7 +9,7 @@ import SingleDeal from "./single-deal";
 const BestDealTwo = () => {
   return (
     <section className="bg-white py-20 lg:py-32">
-      <div className="container flex flex-col lg:flex-row items-center gap-20 max-w-6xl mx-auto">
+      <div className="container flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
         <div>
           <p className="text-dark capitalize pb-5">featured</p>
           <Title

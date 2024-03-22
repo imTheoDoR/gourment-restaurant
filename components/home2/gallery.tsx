@@ -5,6 +5,7 @@ import { gallery } from "@/data/gallery";
 import Image from "next/image";
 import { useState } from "react";
 import { Button } from "../ui/button";
+import PlayButton from "../menu/play-button";
 
 const GourmetGallery = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -38,21 +39,34 @@ const GourmetGallery = () => {
               onClick={() => openLightbox(item as GalleryProps)}
             >
               {item.type === "image" ? (
-                <Image
-                  src={item.src}
-                  alt="Gallery Item"
-                  width={390}
-                  height={362}
-                  className="h-[360px] w-full"
-                />
+                <div className="relative h-[360px] w-full group">
+                  <div className="bg-gradient-to-t from-red to-transparent z-50 w-full h-full absolute opacity-0 group-hover:opacity-100 duration-300 flex justify-center items-center">
+                    <div className="w-24 h-24 bg-red flex items-center justify-center rounded-full text-white p-1 capitalize">
+                      see photo
+                    </div>
+                  </div>
+                  <Image
+                    src={item.src}
+                    alt="Gallery Item"
+                    width={390}
+                    height={362}
+                    className="h-[360px] w-full"
+                  />
+                </div>
               ) : (
-                <Image
-                  src={item.prevImage || ""}
-                  alt="Gallery Item"
-                  width={390}
-                  height={362}
-                  className="h-[360px] w-full"
-                />
+                <div className="relative h-[360px] w-full group">
+                  <div className="bg-[#0E121D]/70 z-50 w-full h-full absolute opacity-0 group-hover:opacity-100 duration-300 flex justify-center items-center">
+                    <PlayButton isSmaller />
+                  </div>
+
+                  <Image
+                    src={item.prevImage || ""}
+                    alt="Gallery Item"
+                    width={390}
+                    height={362}
+                    className="h-[360px] w-full"
+                  />
+                </div>
               )}
             </div>
           ))}
