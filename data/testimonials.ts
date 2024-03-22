@@ -27,16 +27,16 @@ export const testimonialsTwo = [
     image: "sara-oliver.png",
     name: "Sarah Olive",
     location: "Dubmin, Ireland",
-    rate: 5,
-    review:
+    rating: 5,
+    description:
       "As a seasoned food enthusiast, I've had the pleasure of dining in some of the world's most renowned establishments. However, my recent experience at Gourmet Restaurant truly stood out. From the moment I walked through the door, I was greeted with an air of sophistication and warmth that immediately set the tone for the evening.",
   },
   {
     image: "john-doe.png",
     name: "John Doe",
     location: "Bucharest, Romania",
-    rate: 4,
-    review:
+    rating: 4,
+    description:
       "As a seasoned food enthusiast, I've had the pleasure of dining in some of the world's most renowned establishments.",
   },
 ];

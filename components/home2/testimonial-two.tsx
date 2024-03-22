@@ -26,8 +26,9 @@ const TestimonialTwo = () => {
     );
   };
 
-  const fiveStar = Math.floor(testimonialsTwo[currentTestimonial].rate);
-  const halfStars = testimonialsTwo[currentTestimonial].rate % 1 >= 0.5 ? 1 : 0;
+  const fiveStar = Math.floor(testimonialsTwo[currentTestimonial].rating);
+  const halfStars =
+    testimonialsTwo[currentTestimonial].rating % 1 >= 0.5 ? 1 : 0;
   const emptyStars = 5 - fiveStar - halfStars;
 
   return (
@@ -114,7 +115,7 @@ const TestimonialTwo = () => {
             className="text-dark !text-3xl max-w-[400px] pt-3 pb-5"
           />
           <p className="text-dark">
-            “{testimonialsTwo[currentTestimonial].review}”
+            “{testimonialsTwo[currentTestimonial].description}”
           </p>
 
           <div className="pt-10">
