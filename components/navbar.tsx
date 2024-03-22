@@ -66,16 +66,17 @@ const Navbar = () => {
     },
   };
 
+  // desktop variant
   const dropdownVariants = {
     closed: {
       opacity: 0,
       y: "-20px",
-      display: "none",
       transition: {
         duration: 0.5,
-        display: {
-          delay: 0.5,
-        },
+        ease: "easeInOut",
+      },
+      transitionEnd: {
+        display: "none",
       },
     },
 
@@ -85,13 +86,12 @@ const Navbar = () => {
       display: "block",
       transition: {
         duration: 0.5,
-        display: {
-          delay: 0,
-        },
+        ease: "easeInOut",
       },
     },
   };
 
+  // mobile variant
   const dropdownMenuVariants = {
     closed: {
       opacity: 0,
@@ -123,13 +123,19 @@ const Navbar = () => {
       clearTimeout(closingTimer);
     }
 
-    setDekstopDropDown(index);
+    if (desktopDropDown !== index) {
+      setDekstopDropDown(index);
+    }
   };
 
   const closeDropdown = () => {
+    if (closingTimer) {
+      clearTimeout(closingTimer);
+    }
+
     const timer = setTimeout(() => {
       setDekstopDropDown(null);
-    }, 150);
+    }, 450);
 
     setClosingTimer(timer);
   };
@@ -145,6 +151,12 @@ const Navbar = () => {
   // close the mobile menu after the route was changed
   useEffect(() => {
     const handleRouteChange = () => {
+      if (desktopDropDown !== null) {
+        setDekstopDropDown(null);
+      }
+      if (mobileDropdown !== null) {
+        setMobileDropdown(null);
+      }
       setOpen(false);
     };
 
@@ -155,7 +167,7 @@ const Navbar = () => {
       window.removeEventListener("popstate", handleRouteChange);
       window.removeEventListener("hashchange", handleRouteChange);
     };
-  }, []);
+  }, [mobileDropdown, desktopDropDown]);
 
   return (
     <>
