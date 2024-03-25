@@ -19,6 +19,13 @@ import Link from "next/link";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { LuCalendarClock } from "react-icons/lu";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { BsCalendar2Plus } from "react-icons/bs";
+import { format } from "date-fns";
+import { TimePickerWrapper } from "../time-picker-wrapper";
+import { Separator } from "../ui/separator";
+import { Calendar } from "../ui/calendar";
+import { toast } from "../ui/use-toast";
 
 const ContactForm = () => {
   const [isPending, setTransition] = useTransition();
@@ -26,21 +33,25 @@ const ContactForm = () => {
   const form = useForm<z.infer<typeof ContactFormSchema>>({
     resolver: zodResolver(ContactFormSchema),
     defaultValues: {
-      firstName: undefined,
-      lastName: undefined,
-      email: undefined,
-      guests: undefined,
-      //   time: undefined,
-      //   date: undefined,
-      note: undefined,
+      firstName: "",
+      lastName: "",
+      email: "",
+      guests: 0,
+      date: new Date(),
+      note: "",
       terms: undefined,
     },
   });
 
   const onSubmit = (values: z.infer<typeof ContactFormSchema>) => {
     setTransition(() => {
-      console.log(values);
-      //   form.reset();
+      toast({
+        title: "Your sumitted data:",
+        description: <pre>{JSON.stringify(values, null, 2)}</pre>,
+      });
+
+      // reset the form after submit
+      form.reset();
     });
   };
 
@@ -71,7 +82,7 @@ const ContactForm = () => {
           className="bg-[#FCF9F3] p-10 border-t-[6px] border-yellow"
         >
           <div className="space-y-4">
-            <div className="flex flex-col flex-wrap justify-between gap-5 lg:flex-row">
+            <div className="flex flex-col flex-wrap gap-5 lg:flex-row">
               {/* form field 1 */}
               <FormField
                 control={form.control}
@@ -148,6 +159,7 @@ const ContactForm = () => {
                       <Input
                         {...field}
                         placeholder="Number of guests"
+                        value={field.value === 0 ? "" : field.value}
                         type="number"
                         disabled={isPending}
                         autoComplete="off"
@@ -161,36 +173,53 @@ const ContactForm = () => {
                 )}
               />
 
-              {/* form field 5 */}
-              {/* <FormField
-                control={form.control}
-                name="time"
-                render={({ field }) => (
-                  <FormItem className="max-w-7xl lg:max-w-[230px] w-full">
-                    <FormControl>
-                      <Input
-                        {...field}
-                        placeholder="Time"
-                        type="text"
-                        disabled={isPending}
-                        autoComplete="off"
-                        className="bg-[#f0f0f0] rounded-md placeholder:text-[#615555] text-[#615555] border-transparent focus-visible:ring-red duration-300"
-                      />
-                    </FormControl>
-                  </FormItem>
-                )}
-              /> */}
-
-              {/* form field 6 */}
-              {/* <FormField
+              {/* form field 4 */}
+              <FormField
                 control={form.control}
                 name="date"
                 render={({ field }) => (
                   <FormItem className="max-w-7xl lg:max-w-[230px] w-full">
-                    <FormControl>soon</FormControl>
+                    <Popover>
+                      <FormControl>
+                        <PopoverTrigger asChild>
+                          <Button className="bg-[#f0f0f0] rounded-md placeholder:text-[#615555] text-[#615555] border-transparent focus-visible:ring-red duration-300 w-full">
+                            <BsCalendar2Plus className="w-5 h-5 mr-3 -ml-3 flex-shrink-0" />
+                            {field.value
+                              ? format(field.value, "PPP - HH:mm")
+                              : "Pick a date"}
+                          </Button>
+                        </PopoverTrigger>
+                      </FormControl>
+
+                      <PopoverContent className="border border-red/10 w-full bg-white2/50 backdrop-blur-3xl">
+                        <h4 className="mb-3 font-semibold text-sm text-dark/70 text-center">
+                          Choose a date
+                        </h4>
+                        <Calendar
+                          mode="single"
+                          selected={field.value}
+                          onSelect={field.onChange}
+                          initialFocus
+                        />
+
+                        <Separator className="bg-dark/20 mt-5 mb-3" />
+
+                        <div className="flex flex-col items-center justify-center">
+                          <h4 className="mb-3 font-semibold text-sm text-dark/70">
+                            Choose a hour
+                          </h4>
+                          <TimePickerWrapper
+                            setDate={field.onChange}
+                            date={field.value}
+                          />
+                        </div>
+                      </PopoverContent>
+                    </Popover>
+
+                    <FormMessage />
                   </FormItem>
                 )}
-              /> */}
+              />
             </div>
 
             {/* note field */}
@@ -223,8 +252,10 @@ const ContactForm = () => {
                     <FormControl>
                       <div className="flex items-center">
                         <Checkbox
-                          checked={field.value}
-                          onCheckedChange={field.onChange}
+                          checked={field.value === true}
+                          onCheckedChange={(checked) =>
+                            field.onChange(checked ? true : undefined)
+                          }
                         />
 
                         <span className="ml-3 text-dark/50 text-sm">

@@ -2,7 +2,13 @@
 
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import { ReservationFormSchema } from "@/form-schemas";
 import { Input } from "@/components/ui/input";
@@ -26,10 +32,10 @@ const ReservationForm = () => {
   const form = useForm<z.infer<typeof ReservationFormSchema>>({
     resolver: zodResolver(ReservationFormSchema),
     defaultValues: {
-      name: undefined,
-      email: undefined,
-      phone: undefined,
-      date: undefined,
+      name: "",
+      email: "",
+      phone: "",
+      date: new Date(),
     },
   });
 
@@ -39,6 +45,10 @@ const ReservationForm = () => {
         title: "Your sumitted data:",
         description: <pre>{JSON.stringify(values, null, 2)}</pre>,
       });
+
+      // reset the form after submit
+      form.reset();
+      form.trigger();
     });
   };
 
@@ -71,6 +81,8 @@ const ReservationForm = () => {
                       disabled={isPending}
                     />
                   </FormControl>
+
+                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -88,6 +100,8 @@ const ReservationForm = () => {
                       disabled={isPending}
                     />
                   </FormControl>
+
+                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -101,10 +115,17 @@ const ReservationForm = () => {
                     <Input
                       {...field}
                       placeholder="Phone number*"
-                      type="text"
+                      type="tel"
+                      inputMode="decimal"
                       disabled={isPending}
+                      onChange={(e) => {
+                        const value = e.target.value.replace(/[^0-9]/g, "");
+                        field.onChange(value);
+                      }}
                     />
                   </FormControl>
+
+                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -127,18 +148,6 @@ const ReservationForm = () => {
                     </FormControl>
 
                     <PopoverContent className="border border-red/10 w-full bg-white2/50 backdrop-blur-3xl">
-                      <div className="flex flex-col items-center justify-center">
-                        <h4 className="mb-3 font-semibold text-sm text-dark/70">
-                          Choose a hour
-                        </h4>
-                        <TimePickerWrapper
-                          setDate={field.onChange}
-                          date={field.value}
-                        />
-                      </div>
-
-                      <Separator className="bg-dark/20 mt-5 mb-3" />
-
                       <h4 className="mb-3 font-semibold text-sm text-dark/70 text-center">
                         Choose a date
                       </h4>
@@ -148,8 +157,22 @@ const ReservationForm = () => {
                         onSelect={field.onChange}
                         initialFocus
                       />
+
+                      <Separator className="bg-dark/20 mt-5 mb-3" />
+
+                      <div className="flex flex-col items-center justify-center">
+                        <h4 className="mb-3 font-semibold text-sm text-dark/70">
+                          Choose a hour
+                        </h4>
+                        <TimePickerWrapper
+                          setDate={field.onChange}
+                          date={field.value}
+                        />
+                      </div>
                     </PopoverContent>
                   </Popover>
+
+                  <FormMessage />
                 </FormItem>
               )}
             />
