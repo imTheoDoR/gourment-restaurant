@@ -100,3 +100,14 @@ type GalleryProps = {
   src: string;
   prevImage?: string;
 };
+
+type GetValidNumberConfig = {
+  max: number;
+  min?: number;
+  loop?: boolean;
+};
+
+type TimePickerWrapperProps = {
+  date: Date | undefined;
+  setDate: (date: Date | undefined) => void;
+};

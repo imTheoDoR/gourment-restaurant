@@ -6,31 +6,39 @@ import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import { ReservationFormSchema } from "@/form-schemas";
 import { Input } from "@/components/ui/input";
-import { useState, useTransition } from "react";
+import { useTransition } from "react";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "../../ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "../../ui/dialog";
 import { BsCalendar2Plus, BsCalendarCheck, BsClock } from "react-icons/bs";
-import { LuCalendarClock } from "react-icons/lu";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { format } from "date-fns";
+import { TimePickerWrapper } from "@/components/time-picker-wrapper";
+import { Separator } from "@/components/ui/separator";
+import { toast } from "@/components/ui/use-toast";
 
 const ReservationForm = () => {
   const [isPending, setTransition] = useTransition();
-  const [date, setDate] = useState<Date | undefined>(new Date());
 
   const form = useForm<z.infer<typeof ReservationFormSchema>>({
     resolver: zodResolver(ReservationFormSchema),
     defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      time: new Date(),
-      date: date,
+      name: undefined,
+      email: undefined,
+      phone: undefined,
+      date: undefined,
     },
   });
 
   const onSubmit = (values: z.infer<typeof ReservationFormSchema>) => {
     setTransition(() => {
-      console.log(values);
+      toast({
+        title: "Your sumitted data:",
+        description: <pre>{JSON.stringify(values, null, 2)}</pre>,
+      });
     });
   };
 
@@ -101,57 +109,50 @@ const ReservationForm = () => {
               )}
             />
 
-            <div className="flex flex-row justify-between space-x-2">
-              {/* calendar */}
-              <FormField
-                control={form.control}
-                name="time"
-                render={({ field }) => (
-                  <FormItem>
+            <FormField
+              control={form.control}
+              name="date"
+              render={({ field }) => (
+                <FormItem>
+                  <Popover>
                     <FormControl>
-                      <Dialog>
-                        <DialogTrigger className="bg-black/20 hover:bg-white duration-300 text-gray px-5 py-1 flex items-center">
-                          <BsClock className="w-5 h-5 mr-3" />
-                          Select Time
-                        </DialogTrigger>
-                        <DialogContent>
-                          <Calendar
-                            mode="single"
-                            selected={field.value}
-                            onSelect={setDate}
-                          />
-                        </DialogContent>
-                      </Dialog>
+                      <PopoverTrigger asChild>
+                        <Button className="bg-dark/20 w-full rounded-none text-dark/50 flex items-center">
+                          <BsCalendar2Plus className="w-5 h-5 mr-3 -ml-3" />
+                          {field.value
+                            ? format(field.value, "PPP - HH:mm")
+                            : "Pick a date"}
+                        </Button>
+                      </PopoverTrigger>
                     </FormControl>
-                  </FormItem>
-                )}
-              />
 
-              {/* time */}
-              <FormField
-                control={form.control}
-                name="date"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <Dialog>
-                        <DialogTrigger className="bg-black/20 hover:bg-white duration-300 text-gray px-5 py-1 flex items-center">
-                          <BsCalendar2Plus className="w-5 h-5 mr-3" />
-                          Select Date
-                        </DialogTrigger>
-                        <DialogContent>
-                          <Calendar
-                            mode="single"
-                            selected={field.value}
-                            onSelect={setDate}
-                          />
-                        </DialogContent>
-                      </Dialog>
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-            </div>
+                    <PopoverContent className="border border-red/10 w-full bg-white2/50 backdrop-blur-3xl">
+                      <div className="flex flex-col items-center justify-center">
+                        <h4 className="mb-3 font-semibold text-sm text-dark/70">
+                          Choose a hour
+                        </h4>
+                        <TimePickerWrapper
+                          setDate={field.onChange}
+                          date={field.value}
+                        />
+                      </div>
+
+                      <Separator className="bg-dark/20 mt-5 mb-3" />
+
+                      <h4 className="mb-3 font-semibold text-sm text-dark/70 text-center">
+                        Choose a date
+                      </h4>
+                      <Calendar
+                        mode="single"
+                        selected={field.value}
+                        onSelect={field.onChange}
+                        initialFocus
+                      />
+                    </PopoverContent>
+                  </Popover>
+                </FormItem>
+              )}
+            />
           </div>
 
           <Button

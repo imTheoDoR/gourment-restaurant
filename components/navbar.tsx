@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { IoLocationOutline } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { IoChevronUp } from "react-icons/io5";
 import { cn } from "@/lib/utils";
