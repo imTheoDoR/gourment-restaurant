@@ -118,7 +118,7 @@ const ReservationForm = () => {
                     <FormControl>
                       <PopoverTrigger asChild>
                         <Button className="bg-dark/20 w-full rounded-none text-dark/50 flex items-center">
-                          <BsCalendar2Plus className="w-5 h-5 mr-3 -ml-3" />
+                          <BsCalendar2Plus className="w-5 h-5 mr-3 -ml-3 flex-shrink-0" />
                           {field.value
                             ? format(field.value, "PPP - HH:mm")
                             : "Pick a date"}
