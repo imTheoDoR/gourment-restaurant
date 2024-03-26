@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/navbar";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { LuCalendarClock } from "react-icons/lu";
 
 const MainHeader = () => {
@@ -19,14 +20,16 @@ const MainHeader = () => {
           no other!
         </p>
 
-        <Button
-          variant="reserve"
-          size="reserve"
-          className="text-white2 mt-16 drop-shadow-lg"
-        >
-          <LuCalendarClock className="mr-3 w-9 h-9" />
-          Reserve Today
-        </Button>
+        <Link href="/contact">
+          <Button
+            variant="reserve"
+            size="reserve"
+            className="text-white2 mt-16 drop-shadow-lg"
+          >
+            <LuCalendarClock className="mr-3 w-9 h-9" />
+            Reserve Today
+          </Button>
+        </Link>
       </div>
     </div>
   );
